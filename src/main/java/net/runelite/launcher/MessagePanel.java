@@ -31,7 +31,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -63,6 +63,7 @@ class MessagePanel extends JPanel
 	private final JScrollPane scrollPane;
 	private final JPanel buttonPanel;
 	private final JButton stableBtn;
+	private final JButton exitBtn;
 
 	MessagePanel()
 	{
@@ -114,6 +115,10 @@ class MessagePanel extends JPanel
 
 		stableBtn = addButton("Play", "Launch the game!");
 		buttonPanel.add(stableBtn);
+
+		exitBtn = addButton("Exit", "Exit launcher");
+		exitBtn.setEnabled(false);
+		buttonPanel.add(exitBtn);
 
 		bootstrapChannel.setVisible(false);
 		buttonPanel.setVisible(false);
@@ -217,6 +222,6 @@ class MessagePanel extends JPanel
 		titleLabel.revalidate();
 		titleLabel.repaint();
 
-		return Collections.singletonList(stableBtn);
+		return Arrays.asList(stableBtn, exitBtn);
 	}
 }
