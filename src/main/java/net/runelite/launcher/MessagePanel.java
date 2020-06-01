@@ -31,7 +31,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -63,7 +63,6 @@ class MessagePanel extends JPanel
 	private final JScrollPane scrollPane;
 	private final JPanel buttonPanel;
 	private final JButton stableBtn;
-	private final JButton nightlyBtn;
 
 	MessagePanel()
 	{
@@ -102,7 +101,7 @@ class MessagePanel extends JPanel
 		this.add(scrollPane, c);
 		c.gridy++;
 
-		bootstrapChannel = messageArea("Do you want to make use of the stable or the nightly update channel?");
+		bootstrapChannel = messageArea("Are you ready to play? To launch the game, click on \"Play\"!");
 
 		this.add(bootstrapChannel, c);
 		c.gridy++;
@@ -113,11 +112,8 @@ class MessagePanel extends JPanel
 		buttonPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 		buttonPanel.setOpaque(true);
 
-		stableBtn = addButton("Stable", "The Stable option isn't the most up-to-date build, it will use the most stable OpenOSRS build.");
+		stableBtn = addButton("Play", "Launch the game!");
 		buttonPanel.add(stableBtn);
-
-		nightlyBtn = addButton("Nightly", "The Nightly option is the most up-to-date build, it will use the latest OpenOSRS build which is built each night.");
-		buttonPanel.add(nightlyBtn);
 
 		bootstrapChannel.setVisible(false);
 		buttonPanel.setVisible(false);
@@ -221,6 +217,6 @@ class MessagePanel extends JPanel
 		titleLabel.revalidate();
 		titleLabel.repaint();
 
-		return Arrays.asList(stableBtn, nightlyBtn);
+		return Collections.singletonList(stableBtn);
 	}
 }
