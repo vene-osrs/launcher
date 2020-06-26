@@ -68,7 +68,7 @@ class InfoPanel extends JPanel
 
 	private static final String TROUBLESHOOTING_URL = "https://github.com/runelite/runelite/wiki/Troubleshooting-problems-with-the-client";
 	private static final String DISCORD_INVITE_LINK = "https://discordapp.com/invite/openosrs";
-	private static final String LAUNCHER_DOWNLOAD_LINK = "https://github.com/open-osrs/launcher/releases";
+	private static final String LAUNCHER_DOWNLOAD_LINK = "https://github.com/vene-osrs/launcher/releases";
 
 	InfoPanel(String mode)
 	{
